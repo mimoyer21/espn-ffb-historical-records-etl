@@ -22,7 +22,6 @@ from google.cloud import storage, bigquery
 from google.oauth2 import service_account
 
 AIRFLOW_PATH = sys.argv[1] # airflow_path passed in via argument in ffb_gcp_dag.py
-# AIRFLOW_PATH = os.environ.get('AIRFLOW_HOME') or '~/airflow'
 
 # ESPN league variables
 LEAGUE_ID = 506169
@@ -33,13 +32,11 @@ LEAGUE_NICKNAME = "JKL"
 # variables for local file(s)
 OUTPUT_FILE_NAME = LEAGUE_NICKNAME + "_historical.csv"
 OUTPUT_FILE_PATH = AIRFLOW_PATH + '/output_files/' + OUTPUT_FILE_NAME
-# OUTPUT_FILE_PATH = "/Users/mmoyer/git/espn_ffb_historical_records_etl/airflow_workspace/output_files/" + OUTPUT_FILE_NAME
 COLUMNS = {"year":"INTEGER","owner":"STRING","team_name":"STRING","wins":"INTEGER","losses":"INTEGER","ties":"INTEGER","win_pct":"FLOAT","pts_for":"FLOAT","ppg":"FLOAT","pts_against":"FLOAT","playoff_finish":"INTEGER","reg_season_finish":"INTEGER"}
 
 # GCP variables for storing files
 BUCKET_NAME = "fantasy-fb-bucket"
 KEY_PATH = AIRFLOW_PATH + "/fantasy-football-test-338723-3503d10af898.json" # path to GCP service account credentials
-# KEY_PATH = "/Users/mmoyer/git/espn_ffb_historical_records_etl/airflow_workspace/fantasy-football-test-338723-3503d10af898.json" # path to GCP service account credentials
 
 
 def create_empty_local_csv(file_path, columns):
