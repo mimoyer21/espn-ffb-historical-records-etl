@@ -1,4 +1,4 @@
-# README.md for espn_ffb_historical_records_etl Pipeline
+# README.md for espn-ffb-historical-records-etl Pipeline
 Airflow DAG to run ETL process to populate a BigQuery db with historical records from the Jayhawk 
 Keeper League fantasy football league. Pipeline also outputs data as a CSV delivered via email.
 
@@ -20,7 +20,7 @@ Once that all happens within the `run_python_script` step, the CSV is also email
 user in the `email_result_csv` step of the dag.
 
 ## Final DAG:
-![alt text]() 
+![alt text](https://github.com/mimoyer21/espn-ffb-historical-records-etl/blob/main/DAG_diagram.png) 
 
 ## BigQuery Output:
 [Link to table in BigQuery console](https://console.cloud.google.com/bigquery?_ga=2.123119171.934828281.1654637609-1773417848.1651011285&project=fantasy-football-test-338723&ws=!1m5!1m4!4m3!1sfantasy-football-test-338723!2sjkl_records!3sjkl_standings_yearly) (will only work if you have permissions)
