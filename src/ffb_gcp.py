@@ -52,7 +52,7 @@ def get_team_results(team, year):
     ppg = team.points_for / games
     win_pct = (team.wins + team.ties/2) / games
 
-    return [year,team.owner,team.team_name,team.wins,team.losses,team.ties,win_pct,team.points_for,ppg,                 team.points_against,team.final_standing,team.standing]
+    return [year,team.owner,team.team_name,team.wins,team.losses,team.ties,win_pct,team.points_for,ppg,team.points_against,team.final_standing,team.standing]
 
 def get_year_standings(year):
     '''Returns final standings for a given league year in the form of a 2D list'''
