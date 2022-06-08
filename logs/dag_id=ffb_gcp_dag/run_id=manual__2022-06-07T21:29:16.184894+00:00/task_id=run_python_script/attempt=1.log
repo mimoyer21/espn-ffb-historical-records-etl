@@ -1,0 +1,43 @@
+[2022-06-07 14:29:20,383] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T21:29:16.184894+00:00 [queued]>
+[2022-06-07 14:29:20,385] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T21:29:16.184894+00:00 [queued]>
+[2022-06-07 14:29:20,385] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 14:29:20,385] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-07 14:29:20,385] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 14:29:20,389] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): run_python_script> on 2022-06-07 21:29:16.184894+00:00
+[2022-06-07 14:29:20,390] {standard_task_runner.py:52} INFO - Started process 48147 to run task
+[2022-06-07 14:29:20,393] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'ffb_gcp_dag', 'run_python_script', 'manual__2022-06-07T21:29:16.184894+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/ffb_gcp_dag.py', '--cfg-path', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmp6t1ub90l', '--error-file', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmpbcm841ln']
+[2022-06-07 14:29:20,393] {standard_task_runner.py:80} INFO - Job 21: Subtask run_python_script
+[2022-06-07 14:29:20,411] {task_command.py:370} INFO - Running <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T21:29:16.184894+00:00 [running]> on host Mikes-MacBook-Air.local
+[2022-06-07 14:29:20,428] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=mimoyer21@gmail.com
+AIRFLOW_CTX_DAG_OWNER=mmoyer
+AIRFLOW_CTX_DAG_ID=ffb_gcp_dag
+AIRFLOW_CTX_TASK_ID=run_python_script
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-07T21:29:16.184894+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-07T21:29:16.184894+00:00
+[2022-06-07 14:29:20,429] {subprocess.py:62} INFO - Tmp dir root location: 
+ /var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T
+[2022-06-07 14:29:20,429] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /Users/mmoyer/airflow_workspace/airflow/src/ffb_gcp.py /Users/mmoyer/airflow_workspace/airflow']
+[2022-06-07 14:29:20,435] {subprocess.py:85} INFO - Output:
+[2022-06-07 14:29:33,358] {subprocess.py:92} INFO - Starting...
+[2022-06-07 14:29:33,359] {subprocess.py:92} INFO - Loading data for 2008...
+[2022-06-07 14:29:33,360] {subprocess.py:92} INFO - Loading data for 2009...
+[2022-06-07 14:29:33,361] {subprocess.py:92} INFO - Loading data for 2010...
+[2022-06-07 14:29:33,362] {subprocess.py:92} INFO - Loading data for 2011...
+[2022-06-07 14:29:33,363] {subprocess.py:92} INFO - Loading data for 2012...
+[2022-06-07 14:29:33,364] {subprocess.py:92} INFO - Loading data for 2013...
+[2022-06-07 14:29:33,365] {subprocess.py:92} INFO - Loading data for 2014...
+[2022-06-07 14:29:33,366] {subprocess.py:92} INFO - Loading data for 2015...
+[2022-06-07 14:29:33,366] {subprocess.py:92} INFO - Loading data for 2016...
+[2022-06-07 14:29:33,367] {subprocess.py:92} INFO - Loading data for 2017...
+[2022-06-07 14:29:33,368] {subprocess.py:92} INFO - Loading data for 2018...
+[2022-06-07 14:29:33,368] {subprocess.py:92} INFO - Local file complete
+[2022-06-07 14:29:33,369] {subprocess.py:92} INFO - File /Users/mmoyer/airflow_workspace/airflow/output_files/JKL_historical.csv uploaded as JKL_historical.csv in bucket fantasy-fb-bucket.
+[2022-06-07 14:29:33,370] {subprocess.py:92} INFO - Loaded 110 rows into table jkl_records.jkl_standings_yearly.
+[2022-06-07 14:29:33,449] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-07 14:29:33,458] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=ffb_gcp_dag, task_id=run_python_script, execution_date=20220607T212916, start_date=20220607T212920, end_date=20220607T212933
+[2022-06-07 14:29:33,466] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-07 14:29:33,475] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

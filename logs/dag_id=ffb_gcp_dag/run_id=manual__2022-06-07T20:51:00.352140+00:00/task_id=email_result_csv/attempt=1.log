@@ -1,0 +1,109 @@
+[2022-06-07 13:51:17,453] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.email_result_csv manual__2022-06-07T20:51:00.352140+00:00 [queued]>
+[2022-06-07 13:51:17,455] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.email_result_csv manual__2022-06-07T20:51:00.352140+00:00 [queued]>
+[2022-06-07 13:51:17,455] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 13:51:17,455] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-07 13:51:17,455] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 13:51:17,459] {taskinstance.py:1377} INFO - Executing <Task(EmailOperator): email_result_csv> on 2022-06-07 20:51:00.352140+00:00
+[2022-06-07 13:51:17,460] {standard_task_runner.py:52} INFO - Started process 46022 to run task
+[2022-06-07 13:51:17,462] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'ffb_gcp_dag', 'email_result_csv', 'manual__2022-06-07T20:51:00.352140+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/ffb_gcp_dag.py', '--cfg-path', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmp_ed6ypbq', '--error-file', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmpn2qd4xvl']
+[2022-06-07 13:51:17,463] {standard_task_runner.py:80} INFO - Job 16: Subtask email_result_csv
+[2022-06-07 13:51:17,477] {task_command.py:370} INFO - Running <TaskInstance: ffb_gcp_dag.email_result_csv manual__2022-06-07T20:51:00.352140+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-06-07 13:51:17,493] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=mimoyer21@gmail.com
+AIRFLOW_CTX_DAG_OWNER=mmoyer
+AIRFLOW_CTX_DAG_ID=ffb_gcp_dag
+AIRFLOW_CTX_TASK_ID=email_result_csv
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-07T20:51:00.352140+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-07T20:51:00.352140+00:00
+[2022-06-07 13:51:17,494] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/operators/email.py", line 75, in execute
+    send_email(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 106, in send_email_smtp
+    msg, recipients = build_mime_message(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 174, in build_mime_message
+    with open(fname, "rb") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mmoyer/airflow_workspace/airflowoutput_files/JKL_historical.csv'
+[2022-06-07 13:51:17,496] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=ffb_gcp_dag, task_id=email_result_csv, execution_date=20220607T205100, start_date=20220607T205117, end_date=20220607T205117
+[2022-06-07 13:51:17,502] {logging_mixin.py:115} WARNING - /Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py:119 PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2022-06-07 13:51:17,502] {configuration.py:549} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-06-07 13:51:17,503] {email.py:228} INFO - Email alerting: attempt 1
+[2022-06-07 13:51:17,504] {configuration.py:549} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-06-07 13:51:17,505] {email.py:228} INFO - Email alerting: attempt 1
+[2022-06-07 13:51:17,505] {taskinstance.py:1944} ERROR - Failed to send email to: ['mimoyer21@gmail.com']
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1598, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1659, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/operators/email.py", line 75, in execute
+    send_email(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 106, in send_email_smtp
+    msg, recipients = build_mime_message(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 174, in build_mime_message
+    with open(fname, "rb") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mmoyer/airflow_workspace/airflowoutput_files/JKL_historical.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 2326, in email_alert
+    send_email(task.email, subject, html_content)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 844, in create_connection
+    raise err
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 832, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1942, in handle_failure
+    self.email_alert(error, task)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 2328, in email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 844, in create_connection
+    raise err
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 832, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+[2022-06-07 13:51:17,509] {standard_task_runner.py:92} ERROR - Failed to execute job 16 for task email_result_csv ([Errno 2] No such file or directory: '/Users/mmoyer/airflow_workspace/airflowoutput_files/JKL_historical.csv'; 46022)
+[2022-06-07 13:51:17,525] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-07 13:51:17,535] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

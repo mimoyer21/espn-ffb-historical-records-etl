@@ -1,0 +1,110 @@
+[2022-06-07 13:47:20,432] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T20:47:17.874621+00:00 [queued]>
+[2022-06-07 13:47:20,434] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T20:47:17.874621+00:00 [queued]>
+[2022-06-07 13:47:20,434] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 13:47:20,434] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-07 13:47:20,434] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-07 13:47:20,439] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): run_python_script> on 2022-06-07 20:47:17.874621+00:00
+[2022-06-07 13:47:20,440] {standard_task_runner.py:52} INFO - Started process 45751 to run task
+[2022-06-07 13:47:20,442] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'ffb_gcp_dag', 'run_python_script', 'manual__2022-06-07T20:47:17.874621+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ffb_gcp_dag.py', '--cfg-path', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmpfw293vw7', '--error-file', '/var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T/tmpznhdc5uc']
+[2022-06-07 13:47:20,445] {standard_task_runner.py:80} INFO - Job 11: Subtask run_python_script
+[2022-06-07 13:47:20,464] {task_command.py:370} INFO - Running <TaskInstance: ffb_gcp_dag.run_python_script manual__2022-06-07T20:47:17.874621+00:00 [running]> on host Mikes-MacBook-Air.local
+[2022-06-07 13:47:20,480] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=mimoyer21@gmail.com
+AIRFLOW_CTX_DAG_OWNER=mmoyer
+AIRFLOW_CTX_DAG_ID=ffb_gcp_dag
+AIRFLOW_CTX_TASK_ID=run_python_script
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-07T20:47:17.874621+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-07T20:47:17.874621+00:00
+[2022-06-07 13:47:20,480] {subprocess.py:62} INFO - Tmp dir root location: 
+ /var/folders/vv/c6m_j9411rz23wsgq67kbmxm0000gn/T
+[2022-06-07 13:47:20,481] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /Users/mmoyer/airflow_workspace/airflow/src/ffb_gcp.py airflow_path']
+[2022-06-07 13:47:20,484] {subprocess.py:85} INFO - Output:
+[2022-06-07 13:47:20,848] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -   File "/Users/mmoyer/airflow_workspace/airflow/src/ffb_gcp.py", line 165, in <module>
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -     main(2008, 2018)
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -   File "/Users/mmoyer/airflow_workspace/airflow/src/ffb_gcp.py", line 144, in main
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -     create_empty_local_csv(OUTPUT_FILE_PATH, COLUMNS)
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -   File "/Users/mmoyer/airflow_workspace/airflow/src/ffb_gcp.py", line 47, in create_empty_local_csv
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO -     with open(file_path, 'w') as my_csv:
+[2022-06-07 13:47:20,849] {subprocess.py:92} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'airflow_path/output_files/JKL_historical.csv'
+[2022-06-07 13:47:20,890] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-06-07 13:47:20,894] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/operators/bash.py", line 194, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-06-07 13:47:20,896] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=ffb_gcp_dag, task_id=run_python_script, execution_date=20220607T204717, start_date=20220607T204720, end_date=20220607T204720
+[2022-06-07 13:47:20,905] {logging_mixin.py:115} WARNING - /Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py:119 PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2022-06-07 13:47:20,905] {configuration.py:549} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-06-07 13:47:20,905] {email.py:228} INFO - Email alerting: attempt 1
+[2022-06-07 13:47:20,907] {configuration.py:549} WARNING - section/key [smtp/smtp_user] not found in config
+[2022-06-07 13:47:20,907] {email.py:228} INFO - Email alerting: attempt 1
+[2022-06-07 13:47:20,908] {taskinstance.py:1944} ERROR - Failed to send email to: ['mimoyer21@gmail.com']
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1598, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1659, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/operators/bash.py", line 194, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 2326, in email_alert
+    send_email(task.email, subject, html_content)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 844, in create_connection
+    raise err
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 832, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1942, in handle_failure
+    self.email_alert(error, task)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 2328, in email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 58, in send_email
+    return backend(
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 119, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 230, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/mmoyer/airflow_workspace/airflow_env/lib/python3.9/site-packages/airflow/utils/email.py", line 264, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 844, in create_connection
+    raise err
+  File "/opt/homebrew/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 832, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+[2022-06-07 13:47:20,912] {standard_task_runner.py:92} ERROR - Failed to execute job 11 for task run_python_script (Bash command failed. The command returned a non-zero exit code 1.; 45751)
+[2022-06-07 13:47:20,947] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-07 13:47:20,959] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

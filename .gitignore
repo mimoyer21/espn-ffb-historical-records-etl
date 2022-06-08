@@ -1,0 +1,8 @@
+# Airflow config file that includes pw token for SMTP email address
+airflow.cfg
+
+# GCP credentials file
+fantasy-football-test-338723-3503d10af898.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
