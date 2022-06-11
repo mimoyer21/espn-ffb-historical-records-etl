@@ -6,7 +6,7 @@ Keeper League fantasy football league. Pipeline also outputs data as a CSV deliv
 The Jayhawk Keeper League has been a fantasy football league (hosted on ESPN) among friends since
 2008. There is no better way to promote friendly trash talking than to surface historical league-member
 performance, so that's what this pipeline does.
-_Note: this Airflow instance is set up in its most basic form, hosted locally using the default SQLite 
+_Note: this Airflow configuration is Airflow in its most basic form, hosted locally using the default SQLite 
 database and SequentialExecutor, so it is certainly not meant for production use._
 
 ## Steps:
